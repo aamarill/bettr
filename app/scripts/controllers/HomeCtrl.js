@@ -1,9 +1,11 @@
 (function() {
 
-  function HomeCtrl(){
+  function HomeCtrl(Firebase){
+    this.FirebaseData = Firebase;
+    this.submitToDo = Firebase.submitToDo
   }
 
   angular
     .module('blocitoff')
-    .controller('HomeCtrl', [HomeCtrl]);
+    .controller('HomeCtrl', ['Firebase', HomeCtrl]);
 })();

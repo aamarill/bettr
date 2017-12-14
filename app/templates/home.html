@@ -1,1 +1,14 @@
 <h1>Home Page</h1>
+<div> To Do List
+  <ol>
+    <div ng-repeat="item in home.FirebaseData.toDos">
+      <li>{{item.text}}</li>
+    </div>
+  </ol>
+</div>
+<div>
+  <textarea id="toDoTextArea" placeholder="Enter to do..." ng-model="toDoText"></textarea>
+  <div ng-click="home.submitToDo(this.toDoText)">
+    Click Here to Submit
+  </div>
+</div>

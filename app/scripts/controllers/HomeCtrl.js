@@ -1,8 +1,8 @@
 (function() {
 
   function HomeCtrl(Firebase){
-    this.FirebaseData = Firebase;
-    this.submitToDo = Firebase.submitToDo
+    this.toDos = Firebase.toDos;
+    this.submitToDo = Firebase.submitToDo;
   }
 
   angular

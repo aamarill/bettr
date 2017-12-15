@@ -1,0 +1,96 @@
+/* use BEM - Block, Element and Modifier when naming classes (e.g. block--element-modifier) */
+
+*{
+  font-family: arial;
+}
+
+textarea#toDoText{
+  resize: none;
+  height: 44px;
+  width: 300px;
+  font-size: 15px;
+}
+
+textarea#priorityText{
+  resize: none;
+  height: 34px;
+  width: 113px;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 12px;
+}
+
+.header {
+  background-color: #aaa;
+  font-size: 50px;
+  font-weight: bold;
+  color: #454545;
+  text-align: center;
+}
+
+.body {
+  background-color: #ccc;
+  width: 500px;
+  margin: 50px auto 0px auto;
+  height: 700px;
+}
+
+.body--title {
+  background-color: #aaa;
+  color: #454545;
+  height: 30px;
+  padding: 10px;
+  margin: 0;
+  font-size: 25px;
+  border-style: solid;
+  border-color: #aaa;
+
+}
+
+.body--toDoText{
+  display: inline-block;
+  border-style: solid;
+  border-color: #ddd;
+  height: 50px;
+}
+
+.body--priorityText{
+  float: right;
+  border-style: solid;
+  border-color: #ddd;
+  height: 50px;
+}
+
+.button--add{
+  float: right;
+  border-style: solid;
+  border-color: #454545;
+  color: #ddd;
+  font-size: 15px;
+  padding: 16.5px 15px 16px 15px;
+  background-color: #454545
+}
+
+.body--item{
+  color: #454545;
+  text-align: left;
+  padding: 10px 0px 10px 20px;
+  margin: 0px;
+  font-size: 20px;
+  border-style: solid;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+
+#task-description{
+  display: inline-block;
+  color: #454545;
+  padding-left: 10px;
+  background-color:
+}
+
+#priority{
+  display: inline-block;
+  color: #454545;
+  padding-left: 205px;
+}

@@ -9,13 +9,13 @@
   <div class="body--toDoText">
     <textarea id="toDoText" placeholder="Enter new task..." ng-model="home.toDoText"></textarea>
   </div>
-  <div class="button--add" ng-click="home.submitToDo(home.toDoText)">
+  <div class="button--add" ng-click="home.submitToDo(home.toDoText, home.priorityText)">
     Add
   </div>
   <div class="body--priorityText">
-    <textarea id="priorityText" placeholder="high, med, low"></textarea>
+    <textarea id="priorityText" placeholder="high, med, low" ng-model="home.priorityText"></textarea>
   </div>
   <div  ng-repeat="toDo in home.toDos">
-    <div class="body--item">{{toDo.text}}</div>
+    <div class="body--item" ng-show="home.expirationCheck(toDo)">{{toDo.text}}</div>
   </div>
 </div>

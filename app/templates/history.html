@@ -1,0 +1,12 @@
+<div class="body">
+  <div class="body--title">
+    Expired Tasks
+  </div>
+  <div>
+    <div id="task-description">Task description</div>
+    <div id="priority">Priority</div>
+  </div>
+  <div  ng-repeat="toDo in history.toDos">
+    <div class="body--item" ng-show="!history.expirationCheck(toDo)">{{toDo.text}}</div>
+  </div>
+</div>

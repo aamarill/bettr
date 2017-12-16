@@ -10,7 +10,10 @@
     <div class="header">
       Blocitoff
     </div>
-
+    <div id="menu">
+      <a class="menu-item" id="home-link" ui-sref="home" ng-click="homeColor={color:'#65cde3'}; historyColor={color: '#888'}" ng-style="homeColor">Active tasks</a>
+      <a class="menu-item" ui-sref="history" ng-click="homeColor={color:'#888'}; historyColor={color:'#65cde3'}" ng-style="historyColor">Task History</a>
+    </div>
     <ui-view></ui-view>
 
     <!-- External References -->
@@ -39,6 +42,7 @@
     <!-- Application Files/ Internal References -->
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <script src="/scripts/controllers/HistoryCtrl.js"></script>
     <script src="/scripts/services/Firebase.js"></script>
   </body>
 </html>

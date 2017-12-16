@@ -31,7 +31,7 @@ textarea#priorityText{
 .body {
   background-color: #ccc;
   width: 500px;
-  margin: 50px auto 0px auto;
+  margin: 0px auto 0px auto;
   height: 700px;
 }
 
@@ -93,4 +93,22 @@ textarea#priorityText{
   display: inline-block;
   color: #454545;
   padding-left: 205px;
+}
+
+#menu{
+  margin-right: 0px;
+  margin-left: 750px;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  width: 20%;
+}
+
+.menu-item{
+  color: #888;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+#home-link{
+  color: #65cde3;
 }

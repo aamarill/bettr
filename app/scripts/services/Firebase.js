@@ -38,10 +38,7 @@
               lastToDoAdded.$loaded().then(function(){
                 lastToDoAdded[1].$value = "expired";
                 lastToDoAdded.$save(1);
-
-                console.log("lastToDoAdded[2].$value = " + lastToDoAdded[2].$value);
               });
-              console.log("does this get executed?");
               $interval.cancel(test);
             }
           }

@@ -3,7 +3,8 @@
   function Firebase($interval, $firebaseArray){
     var Firebase ={};
     var toDosReference = firebase.database().ref().child("To-Dos");
-    Firebase.toDos = $firebaseArray(toDosReference);
+
+    Firebase.toDos = $firebaseArray(toDosReference.orderByChild("priority"));
 
     Firebase.expirationCheck = function(toDo){
       if(toDo.state == "active"){
@@ -13,27 +14,26 @@
       }
     }
 
-    Firebase.submitToDo = function(toDoText, priorityText){
-      if(toDoText, priorityText){
+    Firebase.submitToDo = function(toDoText, priority){
+      if(toDoText && priority){
         var timer = 0;
-        var secondsInOneDay = 86400;
-        var secondsToExpiration = 7 * secondsInOneDay;
+        var SECONDS_TO_EXPIRATION = 604800;
         var date = Date.now();
         var parent = this;
         var toDos = $firebaseArray(toDosReference);
 
         toDos.$add({
-          priority: priorityText,
+          priority: priority,
           state: "active",
           text: toDoText,
           timeAdded: date
 	      }).then(function(lastToDoAddedReference){
           parent.toDoText = "";
-          parent.priorityText = "";
+          parent.priority = "";
           var test = $interval(checkExpirationTimer, 1000);
           function checkExpirationTimer(){
             timer++;
-            if (timer > secondsToExpiration){
+            if (timer > SECONDS_TO_EXPIRATION){
               var lastToDoAdded = $firebaseArray(lastToDoAddedReference);
               lastToDoAdded.$loaded().then(function(){
                 lastToDoAdded[1].$value = "expired";
@@ -43,7 +43,8 @@
             }
           }
         });
-
+      } else {
+        alert("Make sure you have entered a To-Do and selected a priority");
       }
     }
 

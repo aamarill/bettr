@@ -1,12 +1,12 @@
 (function() {
 
-  function HistoryCtrl($interval, Firebase){
-    this.toDos = Firebase.toDos;
-    this.expirationCheck = Firebase.expirationCheck;
+  function HistoryCtrl(Firebase, General){
 
+    this.allToDosSortedByPriority = Firebase.allToDosSortedByPriority;
+    this.checkObjectKey = General.checkObjectKey;
   }
 
   angular
     .module('blocitoff')
-    .controller('HistoryCtrl', ['$interval','Firebase', HistoryCtrl]);
+    .controller('HistoryCtrl', ['Firebase', 'General', HistoryCtrl]);
 })();

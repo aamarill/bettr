@@ -9,7 +9,7 @@
   <div class="body--toDoText">
     <textarea id="toDoText" placeholder="Enter new task..." ng-model="home.toDoText"></textarea>
   </div>
-  <div class="button--add" ng-click="home.submitToDo(home.toDoText, home.priority)">
+  <div class="button--add" ng-click="home.submitToDoAndTrackExpiration(home.toDoText, home.priority)">
     Add
   </div>
   <div class="body--priorityText">
@@ -19,7 +19,7 @@
       <option value=1>high</option>
     </select>
   </div>
-  <div  ng-repeat="toDo in home.toDos">
-    <div class="body--item" ng-show="home.expirationCheck(toDo)">{{toDo.text}}</div>
+  <div  ng-repeat="toDo in home.allToDosSortedByPriority">
+    <div class="body--item" ng-show="home.checkObjectKey(toDo, 'state', 'active')">{{toDo.text}}</div>
   </div>
 </div>

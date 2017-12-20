@@ -111,3 +111,16 @@ select#priorityText{
 #home-link{
   color: #65cde3;
 }
+
+#checkMark{
+  color: #60ca60;
+  display: inline;
+}
+
+#toDoTextDisplay{
+  display: inline;
+}
+
+#history{
+  text-decoration: line-through;
+}

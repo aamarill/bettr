@@ -1,8 +1,9 @@
 (function() {
 
   function HomeCtrl($interval, Firebase, General){
-
     this.allToDosSortedByPriority = Firebase.allToDosSortedByPriority;
+    this.checkObjectKey = General.checkObjectKey;
+    this.markCompleted = Firebase.markCompleted;
 
     this.submitToDoAndTrackExpiration = function(toDoText, priority){
       if(toDoText && priority){
@@ -14,7 +15,6 @@
       }
     }
 
-    this.checkObjectKey = General.checkObjectKey;
   }
 
   angular

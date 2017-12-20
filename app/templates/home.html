@@ -20,6 +20,11 @@
     </select>
   </div>
   <div  ng-repeat="toDo in home.allToDosSortedByPriority">
-    <div class="body--item" ng-show="home.checkObjectKey(toDo, 'state', 'active')">{{toDo.text}}</div>
+    <div class="body--item" ng-show="home.checkObjectKey(toDo, 'state', 'active')">
+      <div id="toDoTextDisplay">
+        {{toDo.text}}
+      </div>
+      <i class="fa fa-check-circle-o fa-2x" id="checkMark" aria-hidden="true" ng-click="home.markCompleted(toDo)"></i>
+    </div>
   </div>
 </div>

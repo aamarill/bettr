@@ -2,7 +2,6 @@
 
   function Firebase($interval, $firebaseArray){
     var SECONDS_TO_EXPIRATION = 604800;
-    // var SECONDS_TO_EXPIRATION = 10;
     var expirationIntervalPromise;
     var Firebase ={};
     var toDosReference = firebase.database().ref().child("To-Dos");
@@ -20,6 +19,13 @@
       }).then(function(lastToDoAddedReference){
         expirationIntervalPromise = $interval(checkExpiration, 1000, SECONDS_TO_EXPIRATION, true, lastToDoAddedReference);
       });
+    }
+
+    Firebase.markCompleted = function(toDo){
+      var allToDos = Firebase.allToDosSortedByPriority;
+      var index = allToDos.$indexFor(toDo.$id);
+      allToDos[index].state = 'completed';
+      allToDos.$save(index);
     }
 
     function checkExpiration(firebaseReference){

@@ -1,126 +1,125 @@
-/* use BEM - Block, Element and Modifier when naming classes (e.g. block--element-modifier) */
-
-*{
-  font-family: arial;
-}
-
-textarea#toDoText{
-  resize: none;
-  height: 44px;
-  width: 300px;
-  font-size: 15px;
-}
-
-select#priorityText{
-  resize: none;
-  height: 50px;
-  width: 113px;
-  font-size: 15px;
+#my-main-header{
+  background-color: #333;
   text-align: center;
 }
 
-.header {
-  background-color: #aaa;
-  font-size: 50px;
-  font-weight: bold;
-  color: #454545;
+#my-main-header-title{
+  color: #ffbf00;
+  display: inline;
+}
+
+#my-main-header-paragraph{
+  color: #a67c00;
+  display: inline;
+}
+
+#my-navigation-links{
   text-align: center;
+  margin-top: 5%;
 }
 
-.body {
-  background-color: #ccc;
-  width: 500px;
-  margin: 0px auto 0px auto;
-  height: 700px;
-}
-
-.body--title {
-  background-color: #aaa;
-  color: #454545;
-  height: 30px;
-  padding: 10px;
-  margin: 0;
-  font-size: 25px;
-  border-style: solid;
-  border-color: #aaa;
+#my-content{
+  background-color: #d2d4dc;
+  height: 800px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
-.body--toDoText{
-  display: inline-block;
-  border-style: solid;
-  border-color: #ddd;
+#my-content-header{
+  background-color: #afafaf;
   height: 50px;
-}
-
-.body--priorityText{
-  float: right;
-  border-style: solid;
-  border-color: #ddd;
-  height: 50px;
-}
-
-.button--add{
-  float: right;
-  border-style: solid;
-  border-color: #454545;
-  color: #ddd;
-  font-size: 15px;
-  padding: 16.5px 15px 16px 15px;
-  background-color: #454545
-}
-
-.body--item{
-  color: #454545;
-  text-align: left;
-  padding: 10px 0px 10px 20px;
-  margin: 0px;
-  font-size: 20px;
-  border-style: solid;
-  border-color: #bbb;
-  background-color: #ddd;
-}
-
-#task-description{
-  display: inline-block;
-  color: #454545;
+  padding-top: 10px;
   padding-left: 10px;
-  background-color:
+  font-size: 20px;
+  font-weight: bold;
 }
 
-#priority{
-  display: inline-block;
-  color: #454545;
-  padding-left: 205px;
+#my-content-labels{
+  background-color: #d2d4dc;
+  height: 20px;
 }
 
-#menu{
-  margin-right: 0px;
-  margin-left: 750px;
-  margin-top: 50px;
-  margin-bottom: 5px;
-  width: 20%;
+#my-content-labels div{
+  float: left;
+  margin: 0 100px 0 5%;
 }
 
-.menu-item{
-  color: #888;
-  margin-right: 30px;
-  text-decoration: none;
+#my-content-data-entry{
+  background-color: #e5e6eb;
+  clear: both;
+  height: 60px;
+  margin: 0;
 }
 
-#home-link{
-  color: #65cde3;
+#my-content-data-entry div{
+  float:left;
 }
 
-#checkMark{
-  color: #60ca60;
-  display: inline;
+#my-data-entry-textarea{
+  float: left;
+  background-color: #f8f8fa;
+  resize: none;
+  width:250px;
+  height: 60px;
+  text-align: center;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #afafaf;
+  border-width: 1px;
 }
 
-#toDoTextDisplay{
-  display: inline;
+#my-data-entry-dropdown{
+  height: 60px;
+  width: 100px;
+  font-size: 20px;
+  margin-left: 3px;
 }
 
-#history{
+#my-data-entry-button{
+  background-color: #ffbf00;
+  text-align: center;
+  height: 60px;
+  width: 70px;
+  margin-left: 5px;
+  padding-top: 12px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #afafaf;
+  border-width: 1px;
+}
+
+#my-content-item{
+  background-color: #e5e6eb;
+  height: 60px;
+  clear: both;
+  border-style: solid;
+  border-color: #afafaf;
+  border-width: 1px;
+}
+
+#my-content-item div{
+float: left;
+margin-top: 3%;
+}
+
+#my-content-item i{
+  float:right;
+  margin-top: 1%;
+  margin-right: 4%;
+}
+
+#my-content-item-text{
+  padding-left: 10px;
+}
+
+#my-content-item-icon{
+  color: #d1d1d1;
+}
+
+.history-toDo-text{
   text-decoration: line-through;
 }

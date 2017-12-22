@@ -5,31 +5,26 @@
     <title>Blocitoff | Do More</title>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-    <div class="header">
-      Blocitoff
+    <div>
+      <div id="my-main-header">
+        <h1 id='my-main-header-title'>BETTR</h1>
+        <p id="my-main-header-paragraph">An app to-do better</p>
+      </div>
+      <ui-view></ui-view>
     </div>
-    <div id="menu" ng-controller="IndexCtrl as index">
-      <a class="menu-item" id="home-link" ui-sref="home" ng-click="index.setLinkColor('#65cde3','#888')" ng-style="index.homeColor">Active tasks</a>
-      <a class="menu-item" ui-sref="history" ng-click="index.setLinkColor('#888', '#65cde3')" ng-style="index.historyColor">Task History</a>
-    </div>
-    <ui-view></ui-view>
-
-    <!-- External References -->
-    <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <!-- AngularUI Router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
-    <!-- AngularFire -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-    <!-- FireBase -->
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
     <script>
-      // Initialize Firebase
       var config = {
         apiKey: "AIzaSyBS_-mMDZ6xYYeZbo7txFhcLQaxWgggitM",
         authDomain: "blocitoff-93c60.firebaseapp.com",
@@ -40,14 +35,9 @@
       };
       firebase.initializeApp(config);
     </script>
-
-    <!-- Application Files/ Internal References -->
     <script src="/scripts/app.js"></script>
-    <script src="/scripts/controllers/IndexCtrl.js"></script>
     <script src="/scripts/controllers/HomeCtrl.js"></script>
     <script src="/scripts/controllers/HistoryCtrl.js"></script>
     <script src="/scripts/services/Firebase.js"></script>
-    <script src="/scripts/services/Styling.js"></script>
-    <script src="/scripts/services/General.js"></script>
   </body>
 </html>

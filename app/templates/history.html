@@ -1,13 +1,21 @@
-<div class="body">
-  <div class="body--title">
+<div id="my-navigation-links">
+  <a ui-sref="home" style="color: #888">Active tasks</a>
+  <a ui-sref="history" style="color: #ffbf00">Task History</a>
+</div>
+<div id="my-content">
+  <div id="my-content-header">
     Expired Tasks
   </div>
-  <div>
-    <div id="task-description">Task description</div>
+  <div id="my-content-labels">
+    <div>Task description</div>
   </div>
-  <div  ng-repeat="toDo in history.allToDosSortedByPriority">
-    <div class="body--item" id="history" ng-show="history.checkObjectKey(toDo,'state','expired') || history.checkObjectKey(toDo,'state','completed')">
-      {{toDo.text}}
+  <div ng-repeat="toDo in history.allToDosSortedByPriority">
+    <div ng-show="history.checkToDoState(toDo)">
+      <div id="my-content-item">
+        <div class="history-toDo-text" id="my-content-item-text">
+          {{toDo.text}}
+        </div>
+      </div>
     </div>
   </div>
 </div>

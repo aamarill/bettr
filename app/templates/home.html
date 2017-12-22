@@ -1,30 +1,37 @@
-<div class="body">
-  <div class="body--title">
+<div id="my-navigation-links">
+  <a ui-sref="home" style="color: #ffbf00">Active tasks</a>
+  <a ui-sref="history" style="color:#888">Task History</a>
+</div>
+<div id="my-content">
+  <div id="my-content-header">
     Current Tasks
   </div>
-  <div>
-    <div id="task-description">Task description</div>
-    <div id="priority">Priority</div>
+  <div id="my-content-labels">
+    <div>Task description</div>
+    <div>Priority</div>
   </div>
-  <div class="body--toDoText">
-    <textarea id="toDoText" placeholder="Enter new task..." ng-model="home.toDoText"></textarea>
-  </div>
-  <div class="button--add" ng-click="home.submitToDoAndTrackExpiration(home.toDoText, home.priority)">
-    Add
-  </div>
-  <div class="body--priorityText">
-    <select name="priority" id="priorityText" ng-model="home.priority">
-      <option value=3>low</option>
-      <option value=2>med</option>
-      <option value=1>high</option>
-    </select>
+  <div id="my-content-data-entry">
+    <textarea id="my-data-entry-textarea" placeholder="Enter new task..." ng-model="home.toDoText"></textarea>
+    <div>
+      <select id="my-data-entry-dropdown" name="priority" ng-model="home.priority">
+        <option value=3>low</option>
+        <option value=2>med</option>
+        <option value=1>high</option>
+      </select>
+    </div>
+    <div id="my-data-entry-button" ng-click="home.addToDo(home.toDoText, home.priority)">
+      Add
+    </div>
   </div>
   <div  ng-repeat="toDo in home.allToDosSortedByPriority">
-    <div class="body--item" ng-show="home.checkObjectKey(toDo, 'state', 'active')">
-      <div id="toDoTextDisplay">
-        {{toDo.text}}
+    <div ng-show="home.checkToDoState(toDo)">
+      <div id="my-content-item">
+        <div id="my-content-item-text">
+          {{toDo.text}}
+        </div>
+        <i id="my-content-item-icon" class="fa fa-check-circle-o fa-3x" aria-hidden="true" ng-click="home.markCompleted(toDo)">
+        </i>
       </div>
-      <i class="fa fa-check-circle-o fa-2x" id="checkMark" aria-hidden="true" ng-click="home.markCompleted(toDo)"></i>
     </div>
   </div>
 </div>

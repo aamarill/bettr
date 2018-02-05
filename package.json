@@ -22,7 +22,11 @@
   },
   "devDependencies": {
     "@angular/cli": "^1.6.7",
+    "@angular/compiler": "^5.2.3",
+    "@angular/compiler-cli": "^5.2.3",
+    "@angular/core": "^5.2.3",
     "connect-modrewrite": "^0.7.9",
-    "es5-shim": "^4.0.1"
+    "es5-shim": "^4.0.1",
+    "typescript": "^2.7.1"
   }
 }

@@ -11,6 +11,6 @@
   }
 
   angular
-    .module('blocitoff')
+    .module('do-bettr')
     .controller('HistoryCtrl', ['Firebase', HistoryCtrl]);
 })();

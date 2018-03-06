@@ -21,6 +21,6 @@
   }
 
   angular
-    .module('blocitoff', ['ui.router', 'firebase'])
+    .module('do-bettr', ['ui.router', 'firebase'])
     .config(config);
 })();

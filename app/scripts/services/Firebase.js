@@ -29,7 +29,7 @@
   }
 
   angular
-    .module('blocitoff')
+    .module('do-bettr')
     .factory('Firebase', ['$firebaseArray', Firebase])
 
 })();

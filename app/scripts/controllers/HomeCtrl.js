@@ -1,6 +1,6 @@
 (function() {
 
-  function HomeCtrl(Firebase, $firebaseArray){
+  function HomeCtrl(Firebase, $firebaseArray, Metrcs){
 
     var SECONDS_TO_EXPIRATION = 604800;
     var allTimeoutIds = {};
@@ -14,6 +14,7 @@
         Firebase.addToDo(toDoText, priority);
         this.toDoText = "";
         this.priority = "";
+        Metrcs.report('To-Do Added');
       } else{
         alert("Make sure you have entered a To-Do and selected a priority");
       }
@@ -58,5 +59,5 @@
 
   angular
     .module('do-bettr')
-    .controller('HomeCtrl', ['Firebase','$firebaseArray', HomeCtrl]);
+    .controller('HomeCtrl', ['Firebase', '$firebaseArray', 'Metrcs', HomeCtrl]);
 })();

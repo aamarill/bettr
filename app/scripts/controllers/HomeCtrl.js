@@ -5,7 +5,10 @@
     var SECONDS_TO_EXPIRATION = 604800;
     var allTimeoutIds = {};
 
-    this.markCompleted = Firebase.markCompleted;
+    this.markCompleted = function(toDo){
+      Firebase.markCompleted(toDo);
+      Metrcs.report('To-Do Completed');
+    }
 
     this.allToDosSortedByPriority = Firebase.allToDosSortedByPriority;
 
